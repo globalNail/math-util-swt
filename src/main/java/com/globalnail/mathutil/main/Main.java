@@ -66,7 +66,7 @@ static void testFactorialGivenRightArgument5RunWell(){
 //              Get 1 as the result of 0!
 //        Actual result/Status (passed, failed) (waiting for test run)
         
-//        Test run: run cái test case 
+//        Test run: run test case
         long expectedResult = 1;
         long actualResult = MathUtility.getFactorial(0); //named-argument
         System.out.println("expected value: " + expectedResult 

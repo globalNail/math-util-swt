@@ -6,17 +6,27 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MathUtilityTest {
-    //    Test case 1: Check getFactorio() with n=0 to see result of 1...
+//    Test case 2: Check getFactorio() with n = -5 to see Exception
+//    chủ động muốn thấy ngoại lệ có xuất hiện như dự kiến không, nếu có thì phải là màu xanh
+//    NẾU CÓ NGOẠI LỆ, PHẢI LÀ MÀU XANH
+    @Test
+    void testFactorialGivenWrongArgumentThrowsException() {
+//    getFactorial(-5);
+        assertThrows(IllegalArgumentException.class, () -> getFactorial(-5));
+        assertThrows(IllegalArgumentException.class, () -> getFactorial(22));
+    }
+
+    //    Test case 2: Check getFactorio() with n = 5 to see result of 150...
     @Test
     void testGetFactorialGivenRightArgument5Runwell() {
-    assertEquals(1, getFactorial(1));
-    assertEquals(2, getFactorial(2));
-    assertEquals(6, getFactorial(3));
-    assertEquals(24, getFactorial(4));
-    assertEquals(120, getFactorial(5));
-    assertEquals(720, getFactorial(6));
+        assertEquals(1, getFactorial(1));
+        assertEquals(2, getFactorial(2));
+        assertEquals(6, getFactorial(3));
+        assertEquals(24, getFactorial(4));
+        assertEquals(120, getFactorial(5));
+        assertEquals(720, getFactorial(6));
     }
-    
+
 //    Cấu trúc test case: Id, Desc, Steps, Expected, Actual, Status, Date, Bug #(bug ID) bugzilla(bugDb)/Jira
 //    Test case 1: Check getFactorio() with n=0 to see result of 1...
     @Test
@@ -35,12 +45,12 @@ class MathUtilityTest {
 //        Lý do: Hàm đã đúng thì phải đúng hết với các test case đã đưa ra
 //        mắt chỉ cần nhìn 2 tín hiệu: xanh, đỏ theo style gộp kết quả
 //        xanh đúng hết, đỏ 1 đứa chết => bỏ hàm, fix lại
-        
+
 //        Kĩ thuật viết code chính (hàm trong api, core...)
 //        Mà đi kém code test hàm luôn, đúng 2 trạng thái xanh đỏ, cứ liên tục code
 //        xong chạy xanh đỏ, sửa, chạy lại xanh đỏ, tối ưu chỉnh code, chạy lại xanh
 //        đỏ, xanh liên tục trong quá trình viết code được gọi là TDD
-//        Test Driven Development - viết code xong hành cùng code test
+//        Test Driven Development - viết code song hành cùng code test
         assertEquals(expectedValue, actualValue);
     }
 }
