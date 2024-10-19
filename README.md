@@ -1,1 +1,1 @@
-"# math-util-swt" 
+# math-util-swt
